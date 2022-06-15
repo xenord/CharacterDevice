@@ -42,7 +42,7 @@ const struct file_operations hello_fops = {
 
 static int hello_uevent(struct device *dev, struct kobj_uevent_env *env)
 {
-	add_uevent_var (env, "DEVMODE=%#o", 0666);
+	add_uevent_var(env, "DEVMODE=%#o", 0666);
 	return 0;
 }
 
@@ -91,9 +91,9 @@ int init_module(void)
 /* Invoke when Module end, 'rmmod command' */
 void cleanup_module(void)
 {
-	device_destroy (hello_class, MKDEV (hello_major, 0));
-	class_unregister (hello_class);
-	class_destroy (hello_class);
+	device_destroy(hello_class, MKDEV (hello_major, 0));
+	class_unregister(hello_class);
+	class_destroy(hello_class);
 
 	unregister_chrdev_region(MKDEV(hello_major, 0), MINORMASK);
 	printk(KERN_INFO "chrdevice.c: Device cleanup completed");

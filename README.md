@@ -22,14 +22,14 @@ apt install linux-headers
 ```
 ## Compile and load
 ```
-make && insmod hello.ko
+make && sudo insmod hello.ko
 ```
 
 ## Unload
 If you want to unload the drvier use
 
 ```
-rmmod hello.ko
+sudo rmmod hello.ko
 ```
 
 ## Clean Binary
